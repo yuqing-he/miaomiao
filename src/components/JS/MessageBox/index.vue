@@ -16,10 +16,10 @@ export default {
 </script>
 
 <style scoped>
-    .messageBox{ width:200px; height:120px; border:1px #ccc solid; border-radius: 4px; background:white; box-shadow: 3px 3px 3px 3px #ccc; position: absolute; left: 50%; top: 50%; margin:-60px 0 0 -100px;}
-    .messageBox h2{ text-align: center; line-height: 40px; font-size: 18px;}
-    .messageBox p{ text-align: center; line-height:40px;}
-    .messageBox > div{ display: flex; position: absolute; bottom: 0; width:100%; border-top:1px #ccc solid;}
-    .messageBox > div div{ flex:1; text-align: center; line-height: 30px; border-right:1px #ccc solid;}
-    .messageBox > div div:last-child{ border:none;}
+    .messageBox{ width:260px; height:140px;font-size: 14px; border:1px #ddd solid; border-radius: 8px; background:white; box-shadow: 2px 2px 3px #bbb; position: absolute; left: 40%; top: 50%; margin:-60px 0 0 -100px;}
+    .messageBox h2{ text-align: center; line-height: 40px; font-size: 16px;}
+    .messageBox p{ text-align: center; line-height:50px;}
+    .messageBox > div{ display: flex;line-height:40px; position: absolute; bottom: 0; width:100%; border-top:1px #ddd solid;}
+    .messageBox > div div{ flex:1; text-align: center;color: #666; border-right:1px #ddd solid;}
+    .messageBox > div div:last-child{ border:none;color: #e54847;}
 </style>

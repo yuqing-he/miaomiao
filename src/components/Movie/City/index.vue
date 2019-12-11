@@ -1,3 +1,4 @@
+<!-- 城市 -->
 <template>
     <div class="city_body">
         <!-- <div class="city_list">
@@ -69,9 +70,10 @@ export default {
     },
     mounted(){
 
-        var cityList = window.localStorage.getItem('cityList');
-        var hotList = window.localStorage.getItem('hotList');
+        var cityList = window.localStorage.getItem('cityList');//
+        var hotList = window.localStorage.getItem('hotList');//
 
+        //再次刷新的时候，存储好的数据取出来就行了，就不用再次发起ajax请求了
         if(cityList && hotList){
             this.cityList = JSON.parse(cityList);
             this.hotList = JSON.parse(hotList);
@@ -87,8 +89,8 @@ export default {
                     var { cityList , hotList } = this.formatCityList(cities);
                     this.cityList = cityList;
                     this.hotList = hotList;
-                    window.localStorage.setItem('cityList' , JSON.stringify(cityList));
-                    window.localStorage.setItem('hotList' , JSON.stringify(hotList));
+                    window.localStorage.setItem('cityList' , JSON.stringify(cityList));//本地存储(性能优化)
+                    window.localStorage.setItem('hotList' , JSON.stringify(hotList));//本地存储(性能优化)
                 }
             });
         }
@@ -148,12 +150,13 @@ export default {
 
         handleToIndex(index){
             var h2 = this.$refs.city_sort.getElementsByTagName('h2');
-            //this.$refs.city_sort.parentNode.scrollTop = h2[index].offsetTop;
-            this.$refs.city_List.toScrollTop(-h2[index].offsetTop);
+            //this.$refs.city_sort.parentNode.scrollTop = h2[index].offsetTop;//原生js的跳转
+            this.$refs.city_List.toScrollTop(-h2[index].offsetTop);//better-scroll提供的跳转
         },
         
         handleToCity(nm,id){
             this.$store.commit('city/CITY_INFO',{ nm , id });
+            //记录上一次的存储(本地存储)
             window.localStorage.setItem('nowNm',nm);
             window.localStorage.setItem('nowId',id);
             this.$router.push('/movie/nowPlaying');

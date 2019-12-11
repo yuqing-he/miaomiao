@@ -58,16 +58,29 @@
                     {{ detailMovie.dra }}
                 </p>
 			</div>
-            <div class="detail_player swiper-container" ref="detail_player">
-				<ul class="swiper-wrapper">
-					<li v-for="(item,index) in detailMovie.photos" :key="index" class="swiper-slide">
-						<div>
-							<img :src="item | setWH('140.127')" alt="">
-						</div>
-					</li>
-				</ul>
+			<div class="detail_intro">
+				<p>
+                    演职人员：{{ detailMovie.dir }}{{ detailMovie.star }}
+                </p>
+			</div>
+			<div class="detail_intro">
+				<p>影片剧照</p>
+				<div class="detail_player swiper-container" ref="detail_player">
+					<ul class="swiper-wrapper">
+						<li v-for="(item,index) in detailMovie.photos" :key="index" class="swiper-slide">
+							<div>
+								<img :src="item | setWH('140.127')" alt="">
+							</div>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
+		<footer id="footer">
+			 <div class="btn_mall">
+				购票
+			</div>
+		</footer>
 	</div>
 </template>
 
@@ -129,9 +142,11 @@ export default {
 .detail_list .detail_list_info{ margin-top: 20px;}
 .detail_list .detail_list_info h2{ font-size: 20px; color:white; font-weight: normal; line-height: 40px;}
 .detail_list .detail_list_info p{ color:white; line-height: 20px; font-size: 14px; color:#ccc;}
-#content .detail_intro{ padding: 10px;}
-#content .detail_player{ margin:20px;}
-.detail_player .swiper-slide{ width:70px; margin-right: 20px; text-align: center; font-size: 14px;}
+#content .detail_intro{ padding: 10px; border-bottom: 1px #e6e6e6 solid;}
+#content .detail_player{ margin:10px 0;}
+.detail_player .swiper-slide{ width:110px; margin-right: 10px; text-align: center; font-size: 14px;}
 .detail_player .swiper-slide img{ width:100%; margin-bottom: 5px;}
 .detail_player .swiper-slide p:nth-of-type(2){ color:#999;}
+#footer { position: fixed; bottom:0; width:100%; height:44px; }
+#footer .btn_mall { line-height: 44px; text-align: center; background-color: #f03d37; color: #fff;font-size: 12px; cursor: pointer;}
 </style>

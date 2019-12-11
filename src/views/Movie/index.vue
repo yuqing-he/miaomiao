@@ -46,10 +46,10 @@ export default {
                     var id = res.data.data.id;
                     if( this.$store.state.city.id == id ){return;}
                     messageBox({
-                        title : '定位',
-                        content : nm,
+                        title : '切换城市',
+                        content : '定位到您在'+ nm + '，是否切换？',
                         cancel : '取消',
-                        ok : '切换定位',
+                        ok : '切换到'+ nm,
                         handleOk(){
                             window.localStorage.setItem('nowNm',nm);
                             window.localStorage.setItem('nowId',id);
@@ -70,7 +70,7 @@ export default {
 .movie_menu .city_name.active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .city_name.router-link-active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .hot_swtich{ display: flex; height:100%; line-height: 45px;}
-.movie_menu .hot_item{ font-size: 15px; color:#666; width:80px; text-align:center; margin:0 12px; font-weight:700;}
+.movie_menu .hot_item{ font-size: 14px; color:#666; width:80px; text-align:center; margin:0 12px; font-weight:700;}
 .movie_menu .hot_item.active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .hot_item.router-link-active{ color: #ef4238; border-bottom: 2px #ef4238 solid;}
 .movie_menu .search_entry{ margin-right:20px; height:100%; line-height: 45px;}

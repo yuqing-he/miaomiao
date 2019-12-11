@@ -39,6 +39,7 @@ export default {
                 password : this.password,
                 verifyImg : this.verifyImg
             }).then((res)=>{
+                console.log(res)
                 var status = res.data.status;
                 var This = this;
                 if(status === 0){
@@ -70,9 +71,9 @@ export default {
 
 <style scoped>
 #content .login_body{  width:100%;}
-.login_body .login_text{ width:100%; height: 40px; border:none; border-bottom: 1px #ccc solid; margin-bottom: 5px; outline: none; text-indent: 10px;}
-.login_body .login_btn{ height:50px; margin:10px;}
-.login_body .login_btn input{ width:100%; height:100%; background:#e54847; border-radius: 3px; border:none; display: block; color:white; font-size: 20px;}
+.login_body .login_text{ width:100%; height: 40px; border:none; border-bottom: 1px #ccc solid; margin-bottom: 8px; outline: none; text-indent: 12px;}
+.login_body .login_btn{ height:44px; margin:12px;}
+.login_body .login_btn input{ width:100%; height:100%; background:#e54847; border-radius: 8px; border:none; display: block; color:white; font-size: 16px;}
 .login_body .login_link{ display: flex; justify-content:space-between;}
-.login_body .login_link a{ text-decoration: none; margin:0 5px; font-size: 12px; color:#e54847;}
+.login_body .login_link a{ text-decoration: none; margin:0 12px; font-size: 12px; color:#e54847;}
 </style>

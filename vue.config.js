@@ -1,4 +1,6 @@
 module.exports = {
+    //打包时，静态资源的配置
+    //publicPath : '/miaomiao'
     devServer : {
         proxy : {
             '/api2' : {
@@ -10,5 +12,5 @@ module.exports = {
                 changeOrigin : true
             }
         }
-    }
+    },
 }
